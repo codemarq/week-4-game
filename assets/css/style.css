@@ -28,28 +28,35 @@ body {
 	background-image: url('../images/star-wars-logo2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: grey;
+	background-color: black;
+}
+
+header {
+	background-color: black;
+	border: yellow solid round 5px;
 }
 
 .jumbotron {
 	background-color: transparent;
+	color: yellow;
+	border: solid 5px yellow;
 }
 
 h1 {
 	font-family: 'starwars';
-	/*color: yellow;*/
+	color: yellow;
 }
 
 h2 {
 	font-family: 'starwars';
-	/*color: yellow;*/
+	color: yellow;
 }
 h3 {
 	font-family: 'starwars';
-	/*color: yellow;*/
+	color: yellow;
 }
 
 p {
 	font-family: 'starwars';
-	/*color: yellow;*/
+	color: yellow;
 }
