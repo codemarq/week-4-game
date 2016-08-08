@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
 	font-family: 'starwars';
 	src: url('../font/Starjedi.ttf');	
 }
@@ -11,7 +11,7 @@
 @font-face {
 	font-family: 'starwarsRnd';
 	src: url('../font/Star_Jedi_Rounded.ttf');
-}
+}*/
 /* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
 @font-face {
 	font-family:"starwars";
@@ -25,10 +25,10 @@
 }
 
 body {
-	background-image: url('../images/star-wars-logo2.png');
+	/*background-image: url('../images/star-wars-logo2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: black;
+	background-color: black;*/
 }
 
 header {
@@ -37,26 +37,36 @@ header {
 }
 
 .jumbotron {
-	background-color: transparent;
-	color: yellow;
+	/*background-color: transparent;
+	color: yellow; */
+
+}
+
+section {
+	background-image: url('../images/star-wars-logo2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: black;
 	border: solid 5px yellow;
 }
 
 h1 {
 	font-family: 'starwars';
-	color: yellow;
+
 }
 
 h2 {
 	font-family: 'starwars';
-	color: yellow;
 }
+
 h3 {
 	font-family: 'starwars';
-	color: yellow;
 }
 
 p {
 	font-family: 'starwars';
-	color: yellow;
+}
+
+#enemy {
+	background-color: transparent;
 }
