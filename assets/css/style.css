@@ -42,8 +42,8 @@ header {
 
 }
 #galleryThumbnail {
-	width: 80%;
-	height: 80%;
+	width: 50%;
+	height: 50%;
 	background-color: transparent;
 	/*make the border change color on click, hover*/
 }
