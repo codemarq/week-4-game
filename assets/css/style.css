@@ -32,52 +32,52 @@ body {
 }
 
 header {
-	/*background-color: black;*/
 	border: yellow solid round 5px;
 }
-
-.jumbotron {
-	/*background-color: transparent;
-	color: yellow; */
-
+img {
+	max-height: 200px;
 }
+
 #galleryThumbnail {
-	width: 50%;
-	height: 50%;
 	background-color: transparent;
-	/*make the border change color on click, hover*/
 }
-/*#arena {
-	background-image: url('../images/star-wars-logo2.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: black;
-	border: solid 5px yellow;
-}*/
+
+#galleryThumbnail img {
+	max-height: 100px;
+}
+
+#arena {
+	text-align: center;
+}
 
 h1 {
 	font-family: 'starwars';
+	color: white;
 
 }
 
 h2 {
 	font-family: 'starwars';
+	color: white;
 }
 
 h3 {
 	font-family: 'starwars';
 	text-align: center;
+	color: white;
 }
 
 p {
 	font-family: 'starwars';
+	color: white;
 }
 
 #enemy {
 	background-color: transparent;
 	border: solid yellow 2px;
 }
- #player {
+
+#player {
  	background-color: transparent;
 	border: solid yellow 2px;
  }
