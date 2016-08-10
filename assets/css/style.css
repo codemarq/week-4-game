@@ -41,7 +41,12 @@ header {
 	color: yellow; */
 
 }
-
+#galleryThumbnail {
+	width: 80%;
+	height: 80%;
+	background-color: transparent;
+	/*make the border change color on click, hover*/
+}
 /*#arena {
 	background-image: url('../images/star-wars-logo2.png');
 	background-size: cover;
