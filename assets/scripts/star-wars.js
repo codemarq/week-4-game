@@ -5,7 +5,7 @@ var starwars = {
 	playerLives = 1;
 	enemyHealth = 0;
 	enemyCounterAttack = 0;
-	galleryCards = [];
+	galleryCards = 0;
 
 
 	// player constructor class:
