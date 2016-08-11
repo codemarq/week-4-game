@@ -1,15 +1,15 @@
 var starwars = {
 
-	playerHealth = 0;
-	playerCounterAttack = 0;
-	playerLives = 1;
-	enemyHealth = 0;
-	enemyCounterAttack = 0;
-	galleryCards = [];
+	playerHealth: 0,
+	playerCounterAttack: 0,
+	playerLives: 1,
+	enemyHealth: 0,
+	enemyCounterAttack: 0,
+	galleryCards: [];
 
 
 	// player constructor class:
-	Player: function (name, healthPoints, attackPower, counterAttackPower, 
+	var Player = function (name, healthPoints, attackPower, counterAttackPower, 
 		image, blaster, winQuote, losingQuote, loseQuote) {
 		// player attributes
 		this.name = name;
@@ -21,28 +21,10 @@ var starwars = {
 		this.winQuote = winQuote;
 		this.losingQuote = losingQuote;
 		this.loseQuote = loseQuote;
-
-		// this.name: name,
-		// this.healthPoints: healthPoints,
-		// this.attackPower: attackPower,
-		// this.counterAttackPower: counterAttackPower,
-		// this.image: image,
-		// this.blaster: blaster,
-		// this.winQuote: winQuote,
-		// this.losingQuote: losingQuote,
-		// this.loseQuote: loseQuote,
-
-		// player methods
-
-
-	}
-
-
+	};
 
 	// players object
 	
-
-
 	galleryCards.push (Player('Luke Skywalker', 100, 6, 6, '../images/luke-skywalker.png',
 	 false, '../sound/luke/whatjunk.wav', '../sound/luke/badfeel1.wav', '../sound/luke/converters.wav'));
 
