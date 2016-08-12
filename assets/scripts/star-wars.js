@@ -5,6 +5,10 @@
 	// enemyHealth: 0,
 	// enemyCounterAttack: 0,
 	
+$(document).ready(function () {
+		// put procedure call to game function here..
+		
+		
 
 	// total available player characters
 	var totalCards= [
@@ -101,23 +105,26 @@
 	};
 
 	// initial cards displayed in gallery at game start
+
+	//left off here with random # generator.
 	var initialCards = function() {
 		gallery = [];
 		for (var i = 0; i < 6; i++) {
 			// var rando = randomRange(0, totalCards.length -1);
-			gallery.push(totalCards[i]);
+			gallery.push(totalCards[randomRange(0, totalCards.length -1)]);
 			console.log(gallery);
 			var nameTag = '#name' + i;
 			var gallTag = '#gallery' + i;
 			var hpTag = '#hp' + i;
 			
 			// now draw this item to the gallery
-			$('nameTag').html('<h2>'+ gallery[i].name + '</h2>');
+			$('#name' + i).html('<h2>'+ gallery[i].name + '</h2>');
 			$('#gallery'+i).attr(src=gallery[i].image);
 			$('#hp' +i).html('<h3>' + gallery[i].healthPoints + '</h3>');
 		}
 	console.log(gallery);
 	};
+	initialCards();
 
 
 	// reset code:
@@ -133,3 +140,4 @@
 
 	// },
 // }
+	});
