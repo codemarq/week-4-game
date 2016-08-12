@@ -39,21 +39,83 @@
 			<!-- <div class='col-md-12 col-xs-12'> -->
 				<div class='row' id='galleryContent'>
 					<!-- divs generated here containing 6 media panels -->
+					<!-- panel # 0 -->
 					<div class="col-sm-2 col-md-2 col-lg-2">
     					<div class="thumbnail" id='galleryThumbnail'>
-      						<div class="caption" id='enemyHP'>
-        						<h3>R2D2</h3>
+      						<div class="caption" id='name0'>
+        						<h3>1</h3>
         					</div>
-      						<img src="assets/images/R2-D2.png" alt="...">
-      						<div class="caption">
+      						<img src="assets/images/r2d2.png" alt="..." id="gallery0">
+      						<div class="caption" id="hp0"> 
         						<h3>HP = </h3>
      						</div>
     					</div>
   					</div>
 					
+					<!-- panel # 1 -->
+					<div class="col-sm-2 col-md-2 col-lg-2">
+    					<div class="thumbnail" id='galleryThumbnail'>
+      						<div class="caption" id='name1'>
+        						<h3>2</h3>
+        					</div>
+      						<img src="assets/images/r2d2.png" alt="..." id="gallery1">
+      						<div class="caption" id="hp1">
+        						<h3>HP = </h3>
+     						</div>
+    					</div>
+  					</div>
 				</div>
 				
-			<!-- </div> -->
+				<!-- panel # 2 -->
+				<div class="col-sm-2 col-md-2 col-lg-2">
+    				<div class="thumbnail" id='galleryThumbnail'>
+      					<div class="caption" id='name2'>
+        					<h3>3</h3>
+        				</div>
+      					<img src="assets/images/r2d2.png" alt="..." id="gallery2">
+      					<div class="caption" id="hp2">
+ 	  						<h3>HP = </h3>
+   						</div>
+    				</div>
+  				</div>
+
+				<!-- panel # 3-->
+				<div class="col-sm-2 col-md-2 col-lg-2">
+    				<div class="thumbnail" id='galleryThumbnail'>
+      					<div class="caption" id='name3'>
+        					<h3>4</h3>
+        				</div>
+      					<img src="assets/images/r2d2.png" alt="..." id="gallery3">
+      					<div class="caption" id="hp3">
+ 	  						<h3>HP = </h3>
+   						</div>
+    				</div>
+  				</div>
+  				<!-- panel # 3-->
+				<div class="col-sm-2 col-md-2 col-lg-2">
+    				<div class="thumbnail" id='galleryThumbnail'>
+      					<div class="caption" id='name3'>
+        					<h3>5</h3>
+        				</div>
+      					<img src="assets/images/r2d2.png" alt="..." id="gallery3">
+      					<div class="caption" id="hp3">
+ 	  						<h3>HP = </h3>
+   						</div>
+    				</div>
+  				</div>
+  				<!-- panel # 5-->
+				<div class="col-sm-2 col-md-2 col-lg-2">
+    				<div class="thumbnail" id='galleryThumbnail'>
+      					<div class="caption" id='name5'>
+        					<h3>6</h3>
+        				</div>
+      					<img src="assets/images/r2d2.png" alt="..." id="gallery3">
+      					<div class="caption" id="hp5">
+ 	  						<h3>HP = </h3>
+   						</div>
+    				</div>
+  				</div>
+
 		<div>
 		<br>
 
@@ -65,7 +127,7 @@
       				<div class="caption">
         				<h3>Player</h3>
         			</div>
-      				<img src="assets/images/Boba_Fett_transparent.png" alt="...">
+      				<img src="assets/images/fett.png" alt="...">
       				<div class="caption">
         				<h3>HP= 100</h3>
         				<!-- later update with heal buttons or something 
@@ -84,7 +146,7 @@
         				<h3>Enemy</h3>
 
         			</div>
-      				<img src="assets/images/luke-skywalker.png" alt="...">
+      				<img src="assets/images/luke.png" alt="...">
       				<div class="caption">
         				<h3>HP = </h3>
      				</div>
@@ -121,10 +183,11 @@
 	<footer>
 		<p>&copy; 2016 John-Mike Marquardt</p>
 	</footer>
-<script type="text/javascript">
+<script type="text/javascript" src="assets/scripts/star-wars.js">
 	// get html loaded and page ready before starting game
 	$(document).ready(function () {
 		// put procedure call to game function here..
+		$(document).on("click", initialCards);
 
 	})
 </script>

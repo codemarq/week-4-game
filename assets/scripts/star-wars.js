@@ -1,11 +1,13 @@
-var starwars = {
+// var starwars = {
+	// playerHealth: 0,
+	// playerCounterAttack: 0,
+	// playerLives: 1,
+	// enemyHealth: 0,
+	// enemyCounterAttack: 0,
+	
 
-	playerHealth: 0,
-	playerCounterAttack: 0,
-	playerLives: 1,
-	enemyHealth: 0,
-	enemyCounterAttack: 0,
-	cards: [
+	// total available player characters
+	var totalCards= [
 		luke = {
 			name: 'Luke Skywalker',
 			healthPoints: 100,
@@ -77,19 +79,57 @@ var starwars = {
 			losingQuote: '../sound/han/hokey.wav',
 			loseQuote: '../sound/han/filth.wav',
 		}, 
-	],
+
+		vader = {
+			name: 'Darth Vader',
+			healthPoints: 180,
+			attackPower: 12,
+			counterAttackPower: 12,
+			image: '../images/vader.png',
+			blaster: true,
+			winQuote: '../sound/vader/easy.wav',
+			losingQuote: '../sound/vader/father.wav',
+			loseQuote: '../sound/vader/join.wav',
+		}, 
+	];
+
+	// random number in range-helper function 
+	var randomRange = function (min, max) {
+		return Math.floor(Math.random() * (max-min) +1 ) + min;
+		console.log(min);
+		console.log(max);
+	};
+
+	// initial cards displayed in gallery at game start
+	var initialCards = function() {
+		gallery = [];
+		for (var i = 0; i < 6; i++) {
+			// var rando = randomRange(0, totalCards.length -1);
+			gallery.push(totalCards[i]);
+			console.log(gallery);
+			var nameTag = '#name' + i;
+			var gallTag = '#gallery' + i;
+			var hpTag = '#hp' + i;
+			
+			// now draw this item to the gallery
+			$('nameTag').html('<h2>'+ gallery[i].name + '</h2>');
+			$('#gallery'+i).attr(src=gallery[i].image);
+			$('#hp' +i).html('<h3>' + gallery[i].healthPoints + '</h3>');
+		}
+	console.log(gallery);
+	};
 
 
 	// reset code:
-	var reset = function () {
-		var playerHealth = 0;
-		var	playerCounterAttack = 0;
-		var	playerLives = 1;
-		var	enemyHealth = 0;
-		var	enemyCounterAttack = 0;
-		var	galleryCards = [];
+	// reset: function () {
+	// 	playerHealth = 0;
+	// 	playerCounterAttack = 0;
+	// 	playerLives = 1;
+	// 	enemyHealth = 0;
+	// 	enemyCounterAttack = 0;
+	// 	gallery = [];
 
 		// maybe put in a timeout step
 
-	};
-}
+	// },
+// }
