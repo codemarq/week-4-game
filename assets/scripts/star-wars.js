@@ -5,49 +5,79 @@ var starwars = {
 	playerLives: 1,
 	enemyHealth: 0,
 	enemyCounterAttack: 0,
-	galleryCards: [];
+	cards: [
+		luke = {
+			name: 'Luke Skywalker',
+			healthPoints: 100,
+			attackPower: 6,
+			counterAttackPower: 6,
+			image: '../images/luke.png',
+			blaster: false,
+			winQuote: '../sound/luke/whatjunk.wav',
+			losingQuote: '../sound/luke/badfeel1.wav',
+			loseQuote: '../sound/luke/converters.wav',
+		}, 
 
+		fett = {
+			name: 'Boba Fett',
+			healthPoints: 120,
+			attackPower: 13,
+			counterAttackPower: 30,
+			image: '../images/fett.png',
+			blaster: true,
+			winQuote: '../sound/fett/cargo.wav',
+			losingQuote: '../sound/fett/whatif.wav',
+			loseQuote: '../sound/fett/asyouwish.wav',
+		}, 
 
-	// player constructor class:
-	var Player = function (name, healthPoints, attackPower, counterAttackPower, 
-		image, blaster, winQuote, losingQuote, loseQuote) {
-		// player attributes
-		this.name = name;
-		this.healthPoints = healthPoints;
-		this.attackPower = attackPower;
-		this.counterAttackPower = counterAttackPower;
-		this.image = image;
-		this.blaster = blaster;
-		this.winQuote = winQuote;
-		this.losingQuote = losingQuote;
-		this.loseQuote = loseQuote;
-	};
+		r2d2 = {
+			name: 'R2-D2',
+			healthPoints: 135,
+			attackPower: 4,
+			counterAttackPower: 23,
+			image: '../images/r2d2.png',
+			blaster: true,
+			winQuote: '../sound/r2d2/r2d2a.wav',
+			losingQuote: '../sound/r2d2/r2d2b.wav',
+			loseQuote: '../sound/r2d2/r2d2b.wav',
+		}, 
 
-	// players object
-	
-	galleryCards.push (Player('Luke Skywalker', 100, 6, 6, '../images/luke-skywalker.png',
-	 false, '../sound/luke/whatjunk.wav', '../sound/luke/badfeel1.wav', '../sound/luke/converters.wav'));
+		c3po = {
+			name: "C-3PO",
+			healthPoints: 67,
+			attackPower: 2,
+			counterAttackPower: 2,
+			image: '../images/c3po.png',
+			blaster: true,
+			winQuote: '../sound/c3po/deity.wav',
+			losingQuote: '../sound/c3po/chances.wav',
+			loseQuote: '../sound/c3po/iamc3po.wav',
+		}, 
 
-	galleryCards.push (Player('Boba Fett', 100, 6, 6, '../images/Boba_Fett_transparent.png',
-	 false, '../sound/fett/cargo.wav', '../sound/fett/whatif.wav', '../sound/fett/asyouwish.wav'));
+		chewie = {
+			name: 'Chewbacca',
+			healthPoints: 170,
+			attackPower: 13,
+			counterAttackPower: 13,
+			image: '../images/chewie.png',
+			blaster: true,
+			winQuote: '../sound/chewie/chewie.wav',
+			losingQuote: '../sound/chewie/chewieCry.wav',
+			loseQuote: '../sound/chewie/wookie.wav',
+		}, 
 
-	galleryCards.push (Player('R2D2', 100, 6, 6, '../images/R2-D2.png',
-	 false, '../sound/R2D2/R2D2a.wav', '../sound/R2D2/R2D2b.wav', '../sound/R2D2/R2D2b.wav'));
-	console.log(galleryCards);
-	console.log('gallery card #1= ' + galleryCards[0]);
-	console.log('gallery card #2= ' + galleryCards[1]);
-	console.log('gallery card #3= ' + galleryCards[2]);
-	// galleryCards.push (Player('luke', 100, 6, 6, '../images/luke-skywalker.png',
-	//  false, '../sound/luke/whatjunk.wav', '../sound/luke/badfeel1.wav', '../converters.wav'));
-
-	// galleryCards.push (Player('luke', 100, 6, 6, '../images/luke-skywalker.png',
-	//  false, '../sound/luke/whatjunk.wav', '../sound/luke/badfeel1.wav', '../converters.wav'));
-
-	// galleryCards.push (Player('luke', 100, 6, 6, '../images/luke-skywalker.png',
-	//  false, '../sound/luke/whatjunk.wav', '../sound/luke/badfeel1.wav', '../converters.wav'));
-
-	// galleryCards.push (Player('luke', 100, 6, 6, '../images/luke-skywalker.png',
-	//  false, '../sound/luke/whatjunk.wav', '../sound/luke/badfeel1.wav', '../converters.wav'));
+		han = {
+			name: 'Han Solo',
+			healthPoints: 135,
+			attackPower: 6,
+			counterAttackPower: 9,
+			image: '../images/han.png',
+			blaster: true,
+			winQuote: '../sound/han/kesselrun.wav',
+			losingQuote: '../sound/han/hokey.wav',
+			loseQuote: '../sound/han/filth.wav',
+		}, 
+	],
 
 
 	// reset code:
