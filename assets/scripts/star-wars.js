@@ -91,9 +91,7 @@ $(document).ready(function () {
 			winQuote: '../sound/han/kesselrun.wav',
 			losingQuote: '../sound/han/hokey.wav',
 			loseQuote: '../sound/han/filth.wav',
-		}, 
-
-		
+		}, 	
 	];
 
 	var start = function () {
@@ -106,17 +104,18 @@ $(document).ready(function () {
 			$('#gallery' + i).attr('src', gallery[i].image);
 			$('#hp' + i).html('<h3>' + gallery[i].healthPoints + '</h3>');
 		}
-		// $('#attackButton').css("visibility", "visible");
-		// $('#startButton').css("visibility", "hidden");
-		// show("#attackButton");
+
 		hide("#startButton");
 		$("#battleMessage").empty();
 		$("#gamePrompt").html("<h3>Click on your choice of player above.</h3>");
 	};
 	
 	var selectCharacter = function () {
+		var galleryClicks = 0;
+		// set a counter for clicking on characters to govern populating arena
+		
 		if ($("#playerName") == "Player") {
-			
+			// pop from array on click and populate player or enemy div
 		}
 	};
 
@@ -128,45 +127,31 @@ $(document).ready(function () {
 	var show = function (elementId) {
 		$(elementId).css("visibility", "visible");
 	};
-
 	$('#galleryThumbnail').on("click", selectCharacter);
 
 // reset code:
-// reset: function () {
-// 	playerHealth = 0;
-// 	playerCounterAttack = 0;
-// 	playerLives = 1;
-// 	enemyHealth = 0;
-// 	enemyCounterAttack = 0;
-// 	gallery = [];
-//  hide('#resetButton');
-//  hide("#attackButton");
-// 	$("#playerName").html("<h3>Player</h3>");
-//  $("#playerHP").html("<h3>HP = </h3>");
-//  $('#enemyName').html("<h3>Enemy</h3>");
-//  $('#enemyHP').html("<h3>HP = </h3>");
+reset: function () {
+	playerHealth = 0;
+	playerCounterAttack = 0;
+	playerLives = 1;
+	enemyHealth = 0;
+	enemyCounterAttack = 0;
+	gallery = [];
+ 	hide('#resetButton');
+ 	hide("#attackButton");
+	$("#playerName").html("<h3>Player</h3>");
+ 	$("#playerHP").html("<h3>HP = </h3>");
+ 	$('#enemyName').html("<h3>Enemy</h3>");
+	$('#enemyHP').html("<h3>HP = </h3>");
 // maybe put in a timeout step
+};
 
-
-
-// start button function--draw a start button on arena
-// shrink gallery
 $('#startButton').on("click", start);
 
 });
-
-// work on random array
-// work on styling again-hover color change, opaque colored backgrounds
-// default text
-
-
-
-// pop from array on click and populate player or enemy div
-
 
 // attack function, include sound and hp dec, as well as cp ++
 
 // if card hp <0 
 
-
-// finalize reset and draw reset button to display on gameover
+// work on styling opaque colored backgrounds
