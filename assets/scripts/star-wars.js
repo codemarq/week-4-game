@@ -14,11 +14,11 @@ $(document).ready(function () {
 			healthPoints: 100,
 			attackPower: 6,
 			counterAttackPower: 6,
-			image: '../images/luke.png',
+			image: 'assets/images/luke.png',
 			blaster: false,
-			winQuote: '../sound/luke/whatjunk.wav',
-			losingQuote: '../sound/luke/badfeel1.wav',
-			loseQuote: '../sound/luke/converters.wav',
+			winQuote: 'assets/sound/luke/whatjunk.wav',
+			losingQuote: 'assets/sound/luke/badfeel1.wav',
+			loseQuote: 'assets/sound/luke/converters.wav',
 		}, 
 
 		r2d2 = {
@@ -26,11 +26,11 @@ $(document).ready(function () {
 			healthPoints: 135,
 			attackPower: 4,
 			counterAttackPower: 23,
-			image: '../week-4-game/assets/images/r2d2.png',
+			image: 'assets/images/r2d2.png',
 			blaster: true,
-			winQuote: '../sound/r2d2/r2d2a.wav',
-			losingQuote: '../sound/r2d2/r2d2b.wav',
-			loseQuote: '../sound/r2d2/r2d2b.wav',
+			winQuote: 'assets/sound/r2d2/r2d2a.wav',
+			losingQuote: 'assets/sound/r2d2/r2d2b.wav',
+			loseQuote: 'assets/sound/r2d2/r2d2b.wav',
 		}, 
 
 		c3po = {
@@ -38,11 +38,11 @@ $(document).ready(function () {
 			healthPoints: 67,
 			attackPower: 2,
 			counterAttackPower: 2,
-			image: '../week-4-game/assets/images/c3po.png',
+			image: 'assets/images/c3po.png',
 			blaster: true,
-			winQuote: '../sound/c3po/deity.wav',
-			losingQuote: '../sound/c3po/chances.wav',
-			loseQuote: '../sound/c3po/iamc3po.wav',
+			winQuote: 'assets/sound/c3po/deity.wav',
+			losingQuote: 'assets/sound/c3po/chances.wav',
+			loseQuote: 'assets/sound/c3po/iamc3po.wav',
 		}, 
 
 		chewie = {
@@ -50,11 +50,11 @@ $(document).ready(function () {
 			healthPoints: 170,
 			attackPower: 13,
 			counterAttackPower: 13,
-			image: '../week-4-game/assets/images/chewie.png',
+			image: 'assets/images/chewie.png',
 			blaster: true,
-			winQuote: '../sound/chewie/chewie.wav',
-			losingQuote: '../sound/chewie/chewieCry.wav',
-			loseQuote: '../sound/chewie/wookie.wav',
+			winQuote: 'assets/sound/chewie/chewie.wav',
+			losingQuote: 'assets/sound/chewie/chewieCry.wav',
+			loseQuote: 'assets/sound/chewie/wookie.wav',
 		}, 
 
 		vader = {
@@ -62,11 +62,11 @@ $(document).ready(function () {
 			healthPoints: 180,
 			attackPower: 12,
 			counterAttackPower: 12,
-			image: '../week-4-game/assets/images/vader.png',
+			image: 'assets/images/vader.png',
 			blaster: true,
-			winQuote: '../sound/vader/easy.wav',
-			losingQuote: '../sound/vader/father.wav',
-			loseQuote: '../sound/vader/join.wav',
+			winQuote: 'assets/sound/vader/easy.wav',
+			losingQuote: 'assets/sound/vader/father.wav',
+			loseQuote: 'assets/sound/vader/join.wav',
 		}, 
 
 		fett = {
@@ -76,22 +76,10 @@ $(document).ready(function () {
 			counterAttackPower: 30,
 			image: 'assets/images/fett.png',
 			blaster: true,
-			winQuote: '../sound/fett/cargo.wav',
-			losingQuote: '../sound/fett/whatif.wav',
-			loseQuote: '../sound/fett/asyouwish.wav',
+			winQuote: 'assets/sound/fett/cargo.wav',
+			losingQuote: 'assets/sound/fett/whatif.wav',
+			loseQuote: 'assets/sound/fett/asyouwish.wav',
 		}, 
-
-		han = {
-			name: 'Han',
-			healthPoints: 135,
-			attackPower: 6,
-			counterAttackPower: 9,
-			image: '../week-4-game/assets/images/han.png',
-			blaster: true,
-			winQuote: '../sound/han/kesselrun.wav',
-			losingQuote: '../sound/han/hokey.wav',
-			loseQuote: '../sound/han/filth.wav',
-		}, 	
 	];
 
 	var start = function () {
@@ -144,7 +132,7 @@ $(document).ready(function () {
 //  	$('#enemyName').html("<h3>Enemy</h3>");
 // 	$('#enemyHP').html("<h3>HP = </h3>");
 // maybe put in a timeout step
-};
+// };
 
 $('#startButton').on("click", start);
 
