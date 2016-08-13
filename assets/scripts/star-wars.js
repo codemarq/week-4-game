@@ -99,14 +99,21 @@ $(document).ready(function () {
 		$("#gamePrompt").html("<h3>Click on your choice of player above.</h3>");
 	};
 	
-	var selectCharacter = function () {
-		var galleryClicks = 0;
-		// set a counter for clicking on characters to govern populating arena
+	// var selectCharacter = function () {
 		
-		if ($("#playerName") == "Player") {
-			// pop from array on click and populate player or enemy div
-		}
-	};
+	// 	// set a counter for clicking on characters to govern populating arena
+		
+	// 		var id = event.target.val;
+	// 		console.log("id = " + id);
+	// 		// if (totalPlayers = 0) {
+	// 		// 	gallery.pop()
+
+	// 		// }
+
+		
+	// 		// pop from array on click and populate player or enemy div
+		
+	// };
 
 	//  helper function to hide html elements
 	var hide = function (elementId) {
@@ -116,7 +123,14 @@ $(document).ready(function () {
 	var show = function (elementId) {
 		$(elementId).css("visibility", "visible");
 	};
-	$('#galleryThumbnail').on("click", selectCharacter);
+	$('thumbnail').click(function () {
+		var charClicked = $(this);
+		if (charClicked.hasClass('number')) {
+			if (totalPlayers == 0) {
+				gallery.pop(this.value);
+			}
+		}
+	});
 
 // reset code:
 // reset: function () {
