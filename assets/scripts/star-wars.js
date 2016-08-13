@@ -14,7 +14,7 @@ $(document).ready(function () {
 			healthPoints: 100,
 			attackPower: 6,
 			counterAttackPower: 6,
-			image: '../week-4-game/assets/images/luke.png',
+			image: '../images/luke.png',
 			blaster: false,
 			winQuote: '../sound/luke/whatjunk.wav',
 			losingQuote: '../sound/luke/badfeel1.wav',
@@ -130,19 +130,19 @@ $(document).ready(function () {
 	$('#galleryThumbnail').on("click", selectCharacter);
 
 // reset code:
-reset: function () {
-	playerHealth = 0;
-	playerCounterAttack = 0;
-	playerLives = 1;
-	enemyHealth = 0;
-	enemyCounterAttack = 0;
-	gallery = [];
- 	hide('#resetButton');
- 	hide("#attackButton");
-	$("#playerName").html("<h3>Player</h3>");
- 	$("#playerHP").html("<h3>HP = </h3>");
- 	$('#enemyName').html("<h3>Enemy</h3>");
-	$('#enemyHP').html("<h3>HP = </h3>");
+// reset: function () {
+// 	playerHealth = 0;
+// 	playerCounterAttack = 0;
+// 	playerLives = 1;
+// 	enemyHealth = 0;
+// 	enemyCounterAttack = 0;
+// 	gallery = [];
+//  	hide('#resetButton');
+//  	hide("#attackButton");
+// 	$("#playerName").html("<h3>Player</h3>");
+//  	$("#playerHP").html("<h3>HP = </h3>");
+//  	$('#enemyName').html("<h3>Enemy</h3>");
+// 	$('#enemyHP').html("<h3>HP = </h3>");
 // maybe put in a timeout step
 };
 
