@@ -1,11 +1,12 @@
-
-	// playerHealth: 0,
-	// playerCounterAttack: 0,
-	// playerLives: 1,
-	// enemyHealth: 0,
-	// enemyCounterAttack: 0,
-	
 $(document).ready(function () {
+
+	// global game variables
+	var playerHealth = 0;
+	var playerCounterAttack = 0;
+	var playerLives = 1;
+	var enemyHealth = 0;
+	var enemyCounterAttack = 0;
+	var totalPlayers = 0;
 
 	// total available player characters
 	var totalCards= [
