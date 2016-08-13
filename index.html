@@ -37,44 +37,43 @@
 	<section class="container">
 		<div class="row" id="galleryBar">
 			<!-- <div class='col-md-12 col-xs-12'> -->
-				<div class='row' id='galleryContent'>
-					<!-- divs generated here containing 6 media panels -->
-					<!-- panel # 0 -->
-					<div class="col-sm-2 col-md-2 col-lg-2">
-    					<div class="thumbnail" id='galleryThumbnail'>
-      						<div class="caption" id='name0'>
-        						<h3>1</h3>
-        					</div>
-      						<img src="assets/images/r2d2.png" alt="..." id="gallery0">
-      						<div class="caption" id="hp0"> 
-        						<h3>HP = </h3>
-     						</div>
-    					</div>
-  					</div>
+			<div class='row' id='galleryContent'>
+				<!-- divs generated here containing 6 media panels -->
+				<!-- panel # 0 -->
+				<div class="col-sm-2 col-md-2 col-lg-2">
+    				<div class="thumbnail" id='galleryThumbnail'>
+      					<div class="caption" id='name0'>
+       						<h3></h3>
+       					</div>
+   						<img src="assets/images/xwing.png" alt="..." id="gallery0">     						
+   						<div class="caption" id="hp0"> 
+        					<h3></h3>
+     					</div>
+    				</div>
+  				</div>
 					
-					<!-- panel # 1 -->
-					<div class="col-sm-2 col-md-2 col-lg-2">
-    					<div class="thumbnail" id='galleryThumbnail'>
-      						<div class="caption" id='name1'>
-        						<h3>2</h3>
-        					</div>
-      						<img src="assets/images/r2d2.png" alt="..." id="gallery1">
-      						<div class="caption" id="hp1">
-        						<h3>HP = </h3>
-     						</div>
-    					</div>
-  					</div>
-				</div>
+				<!-- panel # 1 -->
+				<div class="col-sm-2 col-md-2 col-lg-2">
+    				<div class="thumbnail" id='galleryThumbnail'>
+   						<div class="caption" id='name1'>
+       						<h3></h3>
+              			</div>
+      					<img src="assets/images/interceptor.png" alt="..." id="gallery1">
+      					<div class="caption" id="hp1">
+       						<h3></h3>
+     					</div>
+   					</div>
+   				</div>
 				
 				<!-- panel # 2 -->
 				<div class="col-sm-2 col-md-2 col-lg-2">
     				<div class="thumbnail" id='galleryThumbnail'>
       					<div class="caption" id='name2'>
-        					<h3>3</h3>
+        					<h3></h3>
         				</div>
-      					<img src="assets/images/r2d2.png" alt="..." id="gallery2">
+      					<img src="assets/images/xwing.png" alt="..." id="gallery2">
       					<div class="caption" id="hp2">
- 	  						<h3>HP = </h3>
+ 	  						<h3></h3>
    						</div>
     				</div>
   				</div>
@@ -83,11 +82,11 @@
 				<div class="col-sm-2 col-md-2 col-lg-2">
     				<div class="thumbnail" id='galleryThumbnail'>
       					<div class="caption" id='name3'>
-        					<h3>4</h3>
+        					<h3></h3>
         				</div>
-      					<img src="assets/images/r2d2.png" alt="..." id="gallery3">
+      					<img src="assets/images/interceptor.png" alt="..." id="gallery3">
       					<div class="caption" id="hp3">
- 	  						<h3>HP = </h3>
+ 	  						<h3></h3>
    						</div>
     				</div>
   				</div>
@@ -95,11 +94,11 @@
 				<div class="col-sm-2 col-md-2 col-lg-2">
     				<div class="thumbnail" id='galleryThumbnail'>
       					<div class="caption" id='name4'>
-        					<h3>5</h3>
+        					<h3></h3>
         				</div>
-      					<img src="assets/images/r2d2.png" alt="..." id="gallery4">
+      					<img src="assets/images/xwing.png" alt="..." id="gallery4">
       					<div class="caption" id="hp4">
- 	  						<h3>HP = </h3>
+ 	  						<h3></h3>
    						</div>
     				</div>
   				</div>
@@ -107,15 +106,15 @@
 				<div class="col-sm-2 col-md-2 col-lg-2">
     				<div class="thumbnail" id='galleryThumbnail'>
       					<div class="caption" id='name5'>
-        					<h3>6</h3>
+        					<h3></h3>
         				</div>
-      					<img src="assets/images/r2d2.png" alt="..." id="gallery5">
+      					<img src="assets/images/interceptor.png" alt="..." id="gallery5">
       					<div class="caption" id="hp5">
- 	  						<h3>HP = </h3>
+ 	  						<h3></h3>
    						</div>
     				</div>
   				</div>
-
+  			</div>
 		<div>
 		<br>
 
@@ -123,31 +122,27 @@
 		<div class='row' id='arena'>
 			<!-- player -->
 			<div class="col-md-4 col-sm-6">
-    			<div class="thumbnail" id='player'>
-      				<div class="caption">
+    			<div class="thumbnail">
+      				<div class="caption" id="playerName">
         				<h3>Player</h3>
         			</div>
-      				<img src="assets/images/fett.png" alt="...">
-      				<div class="caption">
-        				<h3>HP= 100</h3>
-        				<!-- later update with heal buttons or something 
-        				<p>
-        					<a href="#" class="btn btn-primary" role="button">Button</a> 
-        					<a href="#" class="btn btn-default" role="button">Button</a>
-        				</p> -->
+      				<div id='playerImage'>
+      					<img src="http://placehold.it/200x200?text=Player" alt="placeholder">
+      				</div>
+      				<div class="caption" id="playerHP">
+        				<h3>HP= </h3>
      				</div>
     			</div>
   			</div>
   			
   			<!-- enemy player -->
 			<div class="col-md-4 col-sm-6">
-    			<div class="thumbnail" id='enemy'>
-      				<div class="caption" id='enemyHP'>
-        				<h3>Enemy</h3>
-
+    			<div class="thumbnail">
+      				<div class="caption" id='enemyName'>
+      					<h3>Enemy</h3>
         			</div>
-      				<img src="assets/images/luke.png" alt="...">
-      				<div class="caption">
+      				<img src="http://placehold.it/200x200?text=Enemy" alt="placeholder">
+      				<div class="caption" id='enemyHP'>
         				<h3>HP = </h3>
      				</div>
     			</div>
@@ -156,24 +151,45 @@
   			<!-- right arena panel, attack button, reset button, game messages -->
 			<div class='col-md-4 col-sm-6' id='attackPanel'>
 			    <!-- select a character, game over prompts -->
-			    <div class='row' id='startGamePrompt'>
-			    	<div class='col-md-12 col-xs-12'>
-			    		<h3 class="text-center">Select a character to start</h3>
+			    <div class='row'>
+			    	<div class='col-md-12 col-xs-12' id='gamePrompt'>
+			    		
 			    	</div>
 			    </div>
 
-				<!-- attack button -->
-				<div class="row" id="attack button">
+			    <!-- reset button -->
+				<div class="row">
+					<div class='col-md-12 col-xs-12'>
+						<button id='resetButton' type="button" class="btn btn-primary btn-xs" value='attack'>
+							<h3>Reset</h3>
+						</button>
+					</div>
+				</div>
+
+			    <!-- attack button -->
+				<div class="row">
 					<div class='col-md-12 col-xs-12'>
 						<button id='attackButton' type="button" class="btn btn-danger btn-xs" value='attack'>
 							<h3>Attack</h3>
 						</button>
+					</div>
 				</div>
+
+				
 
 				<!-- updating battle prompts -->
 				<div class='row' id='battleMessageBox'>
 					<div class='col-md-12 col-xs-12' id='battleMessage'>
-						<h3>Battle message updates here!</h3>
+						<h3>Click Start Button to begin game!</h3>
+					</div>
+				</div>
+
+				<!-- start button -->
+				<div class="row">
+					<div class='col-md-12 col-xs-12'>
+						<button id='startButton' type="button" class="btn btn-success btn-xs" value='start'>
+							<h3>Start</h3>
+						</button>
 					</div>
 				</div>
 			</div>			

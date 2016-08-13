@@ -39,22 +39,9 @@ img {
 	max-width: 200px;
 }
 
-#galleryThumbnail {
-	background-color: transparent;
-}
-
-#galleryThumbnail img {
-	max-height: 100px;
-}
-
-#arena {
-	text-align: center;
-}
-
 h1 {
 	font-family: 'starwars';
 	color: white;
-
 }
 
 h2 {
@@ -73,12 +60,30 @@ p {
 	color: white;
 }
 
-#enemy {
+#galleryThumbnail {
 	background-color: transparent;
+}
+
+#galleryThumbnail img {
+	max-height: 100px;
+}
+
+.thumbnail {
+	background-color: transparent;
+}
+
+.thumbnail:hover {
 	border: solid yellow 2px;
 }
 
-#player {
- 	background-color: transparent;
-	border: solid yellow 2px;
- }
+#arena {
+	text-align: center;
+}
+
+#attackButton {
+	visibility: hidden;
+}
+
+#resetButton {
+	visibility: hidden;
+}

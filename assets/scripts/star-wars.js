@@ -1,4 +1,4 @@
-// var starwars = {
+
 	// playerHealth: 0,
 	// playerCounterAttack: 0,
 	// playerLives: 1,
@@ -6,9 +6,6 @@
 	// enemyCounterAttack: 0,
 	
 $(document).ready(function () {
-		// put procedure call to game function here..
-		
-		
 
 	// total available player characters
 	var totalCards= [
@@ -60,18 +57,6 @@ $(document).ready(function () {
 			loseQuote: '../sound/chewie/wookie.wav',
 		}, 
 
-		han = {
-			name: 'Han',
-			healthPoints: 135,
-			attackPower: 6,
-			counterAttackPower: 9,
-			image: '../week-4-game/assets/images/han.png',
-			blaster: true,
-			winQuote: '../sound/han/kesselrun.wav',
-			losingQuote: '../sound/han/hokey.wav',
-			loseQuote: '../sound/han/filth.wav',
-		}, 
-
 		vader = {
 			name: 'Vader',
 			healthPoints: 180,
@@ -89,56 +74,99 @@ $(document).ready(function () {
 			healthPoints: 120,
 			attackPower: 13,
 			counterAttackPower: 30,
-			image: '../images/fett.png',
+			image: 'assets/images/fett.png',
 			blaster: true,
 			winQuote: '../sound/fett/cargo.wav',
 			losingQuote: '../sound/fett/whatif.wav',
 			loseQuote: '../sound/fett/asyouwish.wav',
 		}, 
+
+		han = {
+			name: 'Han',
+			healthPoints: 135,
+			attackPower: 6,
+			counterAttackPower: 9,
+			image: '../week-4-game/assets/images/han.png',
+			blaster: true,
+			winQuote: '../sound/han/kesselrun.wav',
+			losingQuote: '../sound/han/hokey.wav',
+			loseQuote: '../sound/han/filth.wav',
+		}, 
+
+		
 	];
 
-	// random number in range-helper function 
-	var randomRange = function (min, max) {
-		return Math.floor(Math.random() * (max-min) +1 ) + min;
-		console.log(min);
-		console.log(max);
-	};
-
-	// initial cards displayed in gallery at game start
-
-	//left off here with random # generator.
-	var initialCards = function() {
-		gallery = [];
+	var start = function () {
+		var gallery = [];				
 		for (var i = 0; i < 6; i++) {
-			// var rando = randomRange(0, totalCards.length -1);
-			// gallery.push(totalCards[randomRange(0, totalCards.length -1)]);
 			gallery.push(totalCards[i]);
-			console.log(gallery);
-			var nameTag = '#name' + i;
-			var gallTag = '#gallery' + i;
-			var hpTag = '#hp' + i;
 			
-			// now draw this item to the gallery
+			// now draw this item to the html gallery
 			$('#name' + i).html('<h3>'+ gallery[i].name + '</h3>');
 			$('#gallery' + i).attr('src', gallery[i].image);
 			$('#hp' + i).html('<h3>' + gallery[i].healthPoints + '</h3>');
 		}
-	console.log(gallery);
+		// $('#attackButton').css("visibility", "visible");
+		// $('#startButton').css("visibility", "hidden");
+		// show("#attackButton");
+		hide("#startButton");
+		$("#battleMessage").empty();
+		$("#gamePrompt").html("<h3>Click on your choice of player above.</h3>");
 	};
-	initialCards();
+	
+	var selectCharacter = function () {
+		if ($("#playerName") == "Player") {
+			
+		}
+	};
+
+	//  helper function to hide html elements
+	var hide = function (elementId) {
+		$(elementId).css("visibility", "hidden");
+	};
+	// helper function to show html elements
+	var show = function (elementId) {
+		$(elementId).css("visibility", "visible");
+	};
+
+	$('#galleryThumbnail').on("click", selectCharacter);
+
+// reset code:
+// reset: function () {
+// 	playerHealth = 0;
+// 	playerCounterAttack = 0;
+// 	playerLives = 1;
+// 	enemyHealth = 0;
+// 	enemyCounterAttack = 0;
+// 	gallery = [];
+//  hide('#resetButton');
+//  hide("#attackButton");
+// 	$("#playerName").html("<h3>Player</h3>");
+//  $("#playerHP").html("<h3>HP = </h3>");
+//  $('#enemyName').html("<h3>Enemy</h3>");
+//  $('#enemyHP').html("<h3>HP = </h3>");
+// maybe put in a timeout step
 
 
-	// reset code:
-	// reset: function () {
-	// 	playerHealth = 0;
-	// 	playerCounterAttack = 0;
-	// 	playerLives = 1;
-	// 	enemyHealth = 0;
-	// 	enemyCounterAttack = 0;
-	// 	gallery = [];
 
-		// maybe put in a timeout step
+// start button function--draw a start button on arena
+// shrink gallery
+$('#startButton').on("click", start);
 
-	// },
-// }
-	});
+});
+
+// work on random array
+// work on styling again-hover color change, opaque colored backgrounds
+// default text
+
+
+
+// pop from array on click and populate player or enemy div
+
+
+// attack function, include sound and hp dec, as well as cp ++
+
+// if card hp <0 
+
+
+// finalize reset and draw reset button to display on gameover
