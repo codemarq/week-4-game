@@ -84,7 +84,7 @@ $(document).ready(function () {
 	];
 
 	var start = function () {
-		var gallery = [];				
+		gallery = [];				
 		for (var i = 0; i < 6; i++) {
 			gallery.push(totalCards[i]);
 			
@@ -123,6 +123,7 @@ $(document).ready(function () {
 	var show = function (elementId) {
 		$(elementId).css("visibility", "visible");
 	};
+	
 	$('thumbnail').click(function () {
 		var charClicked = $(this);
 		if (charClicked.hasClass('number')) {
