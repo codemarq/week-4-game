@@ -9,10 +9,10 @@ $(document).ready(function () {
 	var totalPlayers = 0;
 
 	// total available player characters
-	var totalCards= [
+	var characters = [
 		luke = {
 			name: 'Luke',
-			healthPoints: 100,
+			healthPoints: 135,
 			attackPower: 6,
 			counterAttackPower: 6,
 			image: 'assets/images/luke.png',
@@ -20,11 +20,11 @@ $(document).ready(function () {
 			winQuote: 'assets/sound/luke/whatjunk.wav',
 			losingQuote: 'assets/sound/luke/badfeel1.wav',
 			loseQuote: 'assets/sound/luke/converters.wav',
-		}, 
+		},
 
 		r2d2 = {
 			name: 'R2-D2',
-			healthPoints: 135,
+			healthPoints: 100,
 			attackPower: 4,
 			counterAttackPower: 23,
 			image: 'assets/images/r2d2.png',
@@ -32,31 +32,7 @@ $(document).ready(function () {
 			winQuote: 'assets/sound/r2d2/r2d2a.wav',
 			losingQuote: 'assets/sound/r2d2/r2d2b.wav',
 			loseQuote: 'assets/sound/r2d2/r2d2b.wav',
-		}, 
-
-		c3po = {
-			name: "C-3PO",
-			healthPoints: 67,
-			attackPower: 2,
-			counterAttackPower: 2,
-			image: 'assets/images/c3po.png',
-			blaster: true,
-			winQuote: 'assets/sound/c3po/deity.wav',
-			losingQuote: 'assets/sound/c3po/chances.wav',
-			loseQuote: 'assets/sound/c3po/iamc3po.wav',
-		}, 
-
-		chewie = {
-			name: 'Chewie',
-			healthPoints: 170,
-			attackPower: 13,
-			counterAttackPower: 13,
-			image: 'assets/images/chewie.png',
-			blaster: true,
-			winQuote: 'assets/sound/chewie/chewie.wav',
-			losingQuote: 'assets/sound/chewie/chewieCry.wav',
-			loseQuote: 'assets/sound/chewie/wookie.wav',
-		}, 
+		},
 
 		vader = {
 			name: 'Vader',
@@ -68,7 +44,7 @@ $(document).ready(function () {
 			winQuote: 'assets/sound/vader/easy.wav',
 			losingQuote: 'assets/sound/vader/father.wav',
 			loseQuote: 'assets/sound/vader/join.wav',
-		}, 
+		},
 
 		fett = {
 			name: 'Boba Fett',
@@ -80,40 +56,8 @@ $(document).ready(function () {
 			winQuote: 'assets/sound/fett/cargo.wav',
 			losingQuote: 'assets/sound/fett/whatif.wav',
 			loseQuote: 'assets/sound/fett/asyouwish.wav',
-		}, 
-	];
-
-	var start = function () {
-		gallery = [];				
-		for (var i = 0; i < 6; i++) {
-			gallery.push(totalCards[i]);
-			
-			// now draw this item to the html gallery
-			$('#name' + i).html('<h3>'+ gallery[i].name + '</h3>');
-			$('#gallery' + i).attr('src', gallery[i].image);
-			$('#hp' + i).html('<h3>' + gallery[i].healthPoints + '</h3>');
 		}
-
-		hide("#startButton");
-		$("#battleMessage").empty();
-		$("#gamePrompt").html("<h3>Click on your choice of player above.</h3>");
-	};
-	
-	// var selectCharacter = function () {
-		
-	// 	// set a counter for clicking on characters to govern populating arena
-		
-	// 		var id = event.target.val;
-	// 		console.log("id = " + id);
-	// 		// if (totalPlayers = 0) {
-	// 		// 	gallery.pop()
-
-	// 		// }
-
-		
-	// 		// pop from array on click and populate player or enemy div
-		
-	// };
+	];
 
 	//  helper function to hide html elements
 	var hide = function (elementId) {
@@ -123,13 +67,63 @@ $(document).ready(function () {
 	var show = function (elementId) {
 		$(elementId).css("visibility", "visible");
 	};
+
+	var write = function (elementId, thing) {
+		$(elementId).html('<h3>' + thing + "</h3>")
+	};
+
+	var image = function (elementId, image) {
+		$(elementId).attr('src', image);
+	};
+
+	var start = function () {
+		// gallery = [];				
+		// for (var i = 0; i < 6; i++) {
+		// 	gallery.push(totalCards[i]);
+			
+		// 	// now draw this item to the html gallery
+		// 	$('#name' + i).html('<h3>'+ gallery[i].name + '</h3>');
+		// 	$('#gallery' + i).attr('src', gallery[i].image);
+		// 	$('#hp' + i).html('<h3>' + gallery[i].healthPoints + '</h3>');
+		// }
+
+		hide("#startButton");
+		show('#gallery');
+		$("#battleMessage").empty();
+
+
+		$("#gamePrompt").html("<h3>Click on your choice of player above.</h3>");
+	};
 	
-	$('thumbnail').click(function () {
+	var player = {};
+	var enemy = {};
+		
+	// 		// pop from array on click and populate player or enemy div
+
+	
+	$('.gallery').click(function () {
 		var charClicked = $(this);
-		if (charClicked.hasClass('number')) {
-			if (totalPlayers == 0) {
-				gallery.pop(this.value);
-			}
+		var value = charClicked.attr('value');
+		choice = characters[value];
+
+		if (totalPlayers == 0) {
+			player = choice;
+			write('#playerName', player.name);
+			write('#playerHP', player.healthPoints);
+			image('#playerImage', player.image);
+			hide(this);
+			totalPlayers =1;
+		}
+		else if (totalPlayers == 1) {
+			enemy = choice;
+			write('#enemyName', enemy.name);
+			write('#enemyHP', enemy.healthPoints);
+			image('#enemyImage', enemy.image);
+			hide(this);
+			totalPlayers = 2;
+		}
+		else {
+			write('#gamePrompt', 'You can only fight one enemy at a time!');
 		}
 	});
 
@@ -149,7 +143,7 @@ $(document).ready(function () {
 // 	$('#enemyHP').html("<h3>HP = </h3>");
 // maybe put in a timeout step
 // };
-
+hide('#gallery');
 $('#startButton').on("click", start);
 
 });

@@ -41,18 +41,18 @@ img {
 
 h1 {
 	font-family: 'starwars';
-	color: white;
+	color: black;
 }
 
 h2 {
 	font-family: 'starwars';
-	color: white;
+	color: black;
 }
 
 h3 {
 	font-family: 'starwars';
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 p {
@@ -64,11 +64,14 @@ p {
 	max-height: 100px;
 }
 
+.thumbnail img {
+	max-height: 150px;
+}
 .thumbnail {
 	background-color: transparent;
 }
 
-.thumbnail:hover {
+.gallery:hover {
 	border: solid yellow 2px;
 }
 

@@ -28,80 +28,60 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<header class="container">
-		<!-- <div class="jumbotron"> -->
+	<header>
 		<h1 class="text-center">Star Wars Card Battle</h1>
-    	<!-- </div> -->
 	</header>
 
 	<section class="container">
 		<div class="row" id="galleryBar">
 			<!-- <div class='col-md-12 col-xs-12'> -->
 			<div class='row' id='gallery'>
-				<!-- divs generated here containing 6 media panels -->
-				<!-- panel # 0 -->
-				<div class="col-sm-2 col-md-2 col-lg-2">
-    				<div class="thumbnail number" value="0">
-      					<div class="caption" id='name0'>
+				<!-- 4 media panels -->
+				<!-- panel # 0 Luke Skywalker -->
+				<div class="col-sm-3 col-md-3 col-lg-3">
+    				<div class="thumbnail gallery" value="0">
+      					<div class="caption" id="name">
+      						<h3>Luke</h3>
        					</div>
-   						<img src="assets/images/xwing.png" alt="..." id="gallery0" value="0">     						
-   						<div class="caption" id="hp0"> 
+   						<img src="assets/images/luke.png" alt="luke skywalker" id="gallery0">     						
+   						<div class="caption" id="hp"><h3>HP = 135</h3>
      					</div>
     				</div>
   				</div>
 					
-				<!-- panel # 1 -->
-				<div class="col-sm-2 col-md-2 col-lg-2">
-    				<div class="thumbnail number" value='0'>
-   						<div class="caption" id='name1'>
+				<!-- panel # 1 R2D2 -->
+				<div class="col-sm-3 col-md-3 col-lg-3">
+    				<div class="thumbnail gallery" value="1">
+   						<div class="caption" id='name'><h3>R2-D2</h3>
               			</div>
-      					<img src="assets/images/interceptor.png" alt="..." id="gallery1">
-      					<div class="caption" id="hp1">
+      					<img src="assets/images/r2d2.png" alt="R2-D2" id="gallery1">
+      					<div class="caption" id="hp"><h3>HP = 100</h3>
      					</div>
    					</div>
    				</div>
 				
-				<!-- panel # 2 -->
-				<div class="col-sm-2 col-md-2 col-lg-2">
-    				<div class="thumbnail number">
-      					<div class="caption" id='name2'>
+				<!-- panel # 2 Vader-->
+				<div class="col-sm-3 col-md-3 col-lg-3">
+    				<div class="thumbnail gallery" value="2">
+      					<div class="caption" id='name'><h3>Vader</h3>
         				</div>
-      					<img src="assets/images/xwing.png" alt="..." id="gallery2">
-      					<div class="caption" id="hp2">
+      					<img src='assets/images/vader.png' alt="Darth Vader" id="gallery2">
+      					<div class="caption" id="hp"><h3>HP = 180</h3>
    						</div>
     				</div>
   				</div>
 
-				<!-- panel # 3-->
-				<div class="col-sm-2 col-md-2 col-lg-2">
-    				<div class="thumbnail">
-      					<div class="caption" id='name3'>
+				<!-- panel # 3 Boba Fett -->
+				<div class="col-sm-3 col-md-3 col-lg-3">
+    				<div class="thumbnail gallery" value="3">
+      					<div class="caption" id='name'><h3>Boba Fett</h3>
         				</div>
-      					<img src="assets/images/interceptor.png" alt="..." id="gallery3">
-      					<div class="caption" id="hp3">
+      					<img src='assets/images/fett.png' alt="Boba Fett" id="gallery3">
+      					<div class="caption" id="hp"><h3>HP = 120</h3>
    						</div>
     				</div>
   				</div>
-  				<!-- panel # 3-->
-				<div class="col-sm-2 col-md-2 col-lg-2">
-    				<div class="thumbnail">
-      					<div class="caption" id='name4'>
-        				</div>
-      					<img src="assets/images/xwing.png" alt="..." id="gallery4">
-      					<div class="caption" id="hp4">
-   						</div>
-    				</div>
-  				</div>
-  				<!-- panel # 5-->
-				<div class="col-sm-2 col-md-2 col-lg-2">
-    				<div class="thumbnail">
-      					<div class="caption" id='name5'>
-        				</div>
-      					<img src="assets/images/interceptor.png" alt="..." id="gallery5">
-      					<div class="caption" id="hp5">
-   						</div>
-    				</div>
-  				</div>
+  				
   			</div>
 		</div>
 		<br>
@@ -114,11 +94,11 @@
       				<div class="caption" id="playerName">
         				<h3>Player</h3>
         			</div>
-      				<div id='playerImage'>
-      					<img src="https://placehold.it/200x200?text=Player" alt="placeholder">
+      				<div>
+      					<img src="https://placehold.it/200x200?text=Player" alt="placeholder" id='playerImage'>
       				</div>
       				<div class="caption" id="playerHP">
-        				<h3>HP= </h3>
+        				<h3>HP = </h3>
      				</div>
     			</div>
   			</div>
@@ -129,7 +109,7 @@
       				<div class="caption" id='enemyName'>
       					<h3>Enemy</h3>
         			</div>
-      				<img src="https://placehold.it/200x200?text=Enemy" alt="placeholder">
+      				<img src="https://placehold.it/200x200?text=Enemy" alt="placeholder" id ='enemyImage'>
       				<div class="caption" id='enemyHP'>
         				<h3>HP = </h3>
      				</div>
