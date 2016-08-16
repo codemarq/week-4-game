@@ -1,61 +1,61 @@
 $(document).ready(function () {
 
 	// global game variables
-	var playerHealth = 0;
-	var playerCounterAttack = 0;
-	var playerLives = 1;
-	var enemyHealth = 0;
-	var enemyCounterAttack = 0;
+	var wins = 0;
 	var totalPlayers = 0;
+	var player = {};
+	var enemy = {};
+	var baseAttackPower = 0;
+	var enemiesRemaining = 3;
 
 	// total available player characters
 	var characters = [
 		luke = {
 			name: 'Luke',
 			healthPoints: 135,
-			attackPower: 6,
+			attackPower: 8,
 			counterAttackPower: 6,
 			image: 'assets/images/luke.png',
-			blaster: false,
-			winQuote: 'assets/sound/luke/whatjunk.wav',
-			losingQuote: 'assets/sound/luke/badfeel1.wav',
-			loseQuote: 'assets/sound/luke/converters.wav',
+			attackAudio: 'assets/sound/effects/saberdown.wav',
+			winAudio: 'assets/sound/luke/whatjunk.wav',
+			loseAudio: 'assets/sound/luke/badfeel1.wav',
+			startAudio: 'assets/sound/luke/converters.wav',
 		},
 
 		r2d2 = {
 			name: 'R2-D2',
 			healthPoints: 100,
 			attackPower: 4,
-			counterAttackPower: 23,
+			counterAttackPower: 6,
 			image: 'assets/images/r2d2.png',
-			blaster: true,
-			winQuote: 'assets/sound/r2d2/r2d2a.wav',
-			losingQuote: 'assets/sound/r2d2/r2d2b.wav',
-			loseQuote: 'assets/sound/r2d2/r2d2b.wav',
+			attackAudio: 'assets/sound/effects/laser.wav',
+			winAudio: 'assets/sound/r2d2/r2d2a.wav',
+			loseAudio: 'assets/sound/r2d2/r2d2b.wav',
+			startAudio: 'assets/sound/r2d2/r2d2b.wav',
 		},
 
 		vader = {
 			name: 'Vader',
 			healthPoints: 180,
 			attackPower: 12,
-			counterAttackPower: 12,
+			counterAttackPower: 20,
 			image: 'assets/images/vader.png',
-			blaster: true,
-			winQuote: 'assets/sound/vader/easy.wav',
-			losingQuote: 'assets/sound/vader/father.wav',
-			loseQuote: 'assets/sound/vader/join.wav',
+			attackAudio: 'assets/sound/effects/saberdown.wav',
+			winAudio: 'assets/sound/vader/easy.wav',
+			loseAudio: 'assets/sound/vader/father.wav',
+			startAudio: 'assets/sound/vader/bidding.wav',
 		},
 
 		fett = {
 			name: 'Boba Fett',
 			healthPoints: 120,
 			attackPower: 13,
-			counterAttackPower: 30,
+			counterAttackPower: 9,
 			image: 'assets/images/fett.png',
-			blaster: true,
-			winQuote: 'assets/sound/fett/cargo.wav',
-			losingQuote: 'assets/sound/fett/whatif.wav',
-			loseQuote: 'assets/sound/fett/asyouwish.wav',
+			attackAudio: 'assets/sound/effects/laser.wav',
+			winAudio: 'assets/sound/fett/cargo.wav',
+			loseAudio: 'assets/sound/fett/whatif.wav',
+			startAudio: 'assets/sound/fett/asyouwish.wav',
 		}
 	];
 
@@ -67,40 +67,30 @@ $(document).ready(function () {
 	var show = function (elementId) {
 		$(elementId).css("visibility", "visible");
 	};
-
+	// helper function for writing html elements
 	var write = function (elementId, thing) {
 		$(elementId).html('<h3>' + thing + "</h3>")
 	};
-
+	// helper function to replace images
 	var image = function (elementId, image) {
 		$(elementId).attr('src', image);
 	};
 
-	var start = function () {
-		// gallery = [];				
-		// for (var i = 0; i < 6; i++) {
-		// 	gallery.push(totalCards[i]);
-			
-		// 	// now draw this item to the html gallery
-		// 	$('#name' + i).html('<h3>'+ gallery[i].name + '</h3>');
-		// 	$('#gallery' + i).attr('src', gallery[i].image);
-		// 	$('#hp' + i).html('<h3>' + gallery[i].healthPoints + '</h3>');
-		// }
+	// helper function to play audio
+	var playAudio = function (sound) {
+		var audio = new Audio (sound);
+		audio.play();
+	};
 
+	// start game function
+	var start = function () {
 		hide("#startButton");
 		show('#gallery');
 		$("#battleMessage").empty();
-
-
 		$("#gamePrompt").html("<h3>Click on your choice of player above.</h3>");
 	};
-	
-	var player = {};
-	var enemy = {};
-		
-	// 		// pop from array on click and populate player or enemy div
-
-	
+			
+	// select characters and move them to arena
 	$('.gallery').click(function () {
 		var charClicked = $(this);
 		var value = charClicked.attr('value');
@@ -113,6 +103,10 @@ $(document).ready(function () {
 			image('#playerImage', player.image);
 			hide(this);
 			totalPlayers =1;
+			playAudio(player.startAudio);
+			write('#gamePrompt', 'Choose your first enemy!');
+			$('.gallery').css('background-color', '#ff4d4d');
+			baseAttackPower = player.attackPower;
 		}
 		else if (totalPlayers == 1) {
 			enemy = choice;
@@ -121,35 +115,83 @@ $(document).ready(function () {
 			image('#enemyImage', enemy.image);
 			hide(this);
 			totalPlayers = 2;
+			playAudio(enemy.startAudio);
+			show('#attackButton');
+			write('#gamePrompt', 'FIGHT!');
 		}
 		else {
 			write('#gamePrompt', 'You can only fight one enemy at a time!');
 		}
 	});
 
+	// attack functions
+	$('#attackButton').click(function () {
+		playAudio(player.attackAudio);
+		write('#gamePrompt', 'Wins: ');
+		// player attack 
+
+		if (player.healthPoints > 0 && enemy.healthPoints >0) {
+			enemy.healthPoints -= player.attackPower;
+			player.healthPoints -= enemy.counterAttackPower;
+			write('#battleMessage', "You dealt " + player.attackPower + " damage to enemy. Enemy attacked you for " + enemy.counterAttackPower + " damage");
+			
+			player.attackPower += baseAttackPower;
+			write('#playerHP', player.healthPoints);
+			write('#enemyHP', enemy.healthPoints);
+
+			// if player dead
+			if (player.healthPoints <= 0) {
+				show('#resetButton');
+				write('#gamePrompt', "The force was not with you!");
+				playerLives = 0;
+				hide('#attackButton');
+				playAudio(player.loseAudio);
+			}
+
+			// enemy dead
+			else if (enemy.healthPoints <= 0 && player.healthPoints >= 0) {
+				write('#enemyName', 'Enemy');
+				write('#enemyHP', 'HP = ');
+				image('#enemyImage', "https://placehold.it/200x200?text=Enemy");
+				totalPlayers = 1;
+				wins ++;
+				write('#gamePrompt', 'Wins: ' + wins);
+				write('#battleMessage', 'Choose your next enemy.');
+				playAudio(enemy.loseAudio);
+				enemy = {};
+				enemiesRemaining --;
+			}
+
+			if (enemiesRemaining == 0) {
+				show('#resetButton');
+				write('#battleMessage', 'VICTORY!');
+				hide('#attackButton');
+				playAudio(player.winAudio);
+			}
+		};		
+	});
+
+
 // reset code:
-// reset: function () {
-// 	playerHealth = 0;
-// 	playerCounterAttack = 0;
-// 	playerLives = 1;
-// 	enemyHealth = 0;
-// 	enemyCounterAttack = 0;
-// 	gallery = [];
-//  	hide('#resetButton');
-//  	hide("#attackButton");
-// 	$("#playerName").html("<h3>Player</h3>");
-//  	$("#playerHP").html("<h3>HP = </h3>");
-//  	$('#enemyName').html("<h3>Enemy</h3>");
-// 	$('#enemyHP').html("<h3>HP = </h3>");
-// maybe put in a timeout step
-// };
+	var reset = function () {
+	    wins = 0;
+		totalPlayers = 0;
+		player = {};
+		enemy = {};
+		baseAttackPower = 0;
+		enemiesRemaining = 3;
+	 	hide('#resetButton');
+	 	hide("#attackButton");
+	 	write('#battleMessage', 'Click Start Button to begin game!');
+	 	write('#playerName', 'Player');
+	 	write('#playerHP', 'HP = ');
+	 	image('#playerImage', "https://placehold.it/200x200?text=Player");
+	 	write('#enemyName', 'Enemy');
+	 	write('#enemyHP', 'HP = ');
+	 	image('#enemyImage', "https://placehold.it/200x200?text=Enemy");
+	};
+
 hide('#gallery');
 $('#startButton').on("click", start);
-
+$('#resetButton').on("click", reset);
 });
-
-// attack function, include sound and hp dec, as well as cp ++
-
-// if card hp <0 
-
-// work on styling opaque colored backgrounds
