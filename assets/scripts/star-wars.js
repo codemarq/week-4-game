@@ -127,7 +127,7 @@ $(document).ready(function () {
 	// attack functions
 	$('#attackButton').click(function () {
 		playAudio(player.attackAudio);
-		write('#gamePrompt', 'Wins: ');
+		write('#gamePrompt', 'Wins: ' + wins);
 		// player attack 
 
 		if (player.healthPoints > 0 && enemy.healthPoints >0) {
