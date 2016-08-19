@@ -172,7 +172,7 @@ $(document).ready(function () {
 	});
 
 
-// reset code:
+	// reset code:
 	var reset = function () {
 	    wins = 0;
 		totalPlayers = 0;
@@ -189,9 +189,10 @@ $(document).ready(function () {
 	 	write('#enemyName', 'Enemy');
 	 	write('#enemyHP', 'HP = ');
 	 	image('#enemyImage', "https://placehold.it/200x200?text=Enemy");
+	 	show('#startButton');
 	};
 
-hide('#gallery');
-$('#startButton').on("click", start);
-$('#resetButton').on("click", reset);
+	hide('#gallery');
+	$('#startButton').on("click", start);
+	$('#resetButton').on("click", reset);
 });
