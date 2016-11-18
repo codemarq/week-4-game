@@ -21,4 +21,4 @@ This is the week 4 game assignment for UNC Coding Bootcamp-Star Wars card battle
 * characters can win bonus items that help them heal or use force powers
 
 ## Author
-John-Mike Marquardt @codemarq
+&copy; 2016 John-Mike Marquardt [Github](https://github.com/codemarq) | [jmmarquardt.com](https://jmmarquardt.com) | [LinkedIn](https://www.linkedin.com/in/jmmarquardt)
